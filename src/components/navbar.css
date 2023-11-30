@@ -1,0 +1,30 @@
+/* NetflixNavbar.css */
+.netflix-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 10px 20px;
+  }
+  
+  .netflix-logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
