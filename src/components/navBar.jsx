@@ -8,6 +8,7 @@ import { Navbar, Nav, Container, Button, FormControl } from 'react-bootstrap';
 function NavbarComponent() {
   const [isSearchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
 
   const handleSearchButtonClick = () => {
     setSearchVisible(!isSearchVisible);
@@ -21,30 +22,32 @@ function NavbarComponent() {
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
   };
-
+  const handleNavbarToggle = () => {
+    setNavbarExpanded(!navbarExpanded);
+  };
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" expanded={navbarExpanded} onToggle={handleNavbarToggle}>
       <Container>
         <Link to="/" className="navbar-brand">Kitabein</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav mx-auto">
-            <Link to="/home" className="nav-link">Home</Link>
-            <Link to="/products" className="nav-link">Products</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
-            <Link to="/about" className="nav-link">About</Link>
-            <Link to="/Addproduct" className="nav-link">Add product</Link>
+            <Link to="/home" onClick={handleNavbarToggle} className="nav-link">Home</Link>
+            <Link to="/products" onClick={handleNavbarToggle} className="nav-link">Products</Link>
+            <Link to="/contact" onClick={handleNavbarToggle} className="nav-link">Contact</Link>
+            <Link to="/about" onClick={handleNavbarToggle} className="nav-link">About</Link>
+            <Link to="/Addproduct" onClick={handleNavbarToggle} className="nav-link">Add product</Link>
           </Nav>
 
           <Nav className="ms-auto align-items-center">
-            <Link to="/cart" className="nav-link">
+            <Link to="/cart" onClick={handleNavbarToggle} className="nav-link">
               <ShoppingCartIcon />
             </Link>
-            <Link to="/profile" className="nav-link">
+            <Link to="/profile" onClick={handleNavbarToggle} className="nav-link">
               <Person2Icon />
             </Link>
-            <div className="nav-link" onClick={handleSearchButtonClick}>
+            <div className="nav-link"  onClick={handleSearchButtonClick}>
               <SearchIcon />
               {isSearchVisible && (
                 <>
@@ -55,7 +58,8 @@ function NavbarComponent() {
                     value={searchQuery}
                     onChange={handleSearchInputChange}
                   />
-                  <Button onClick={handleSearch}>Search</Button>
+                 <Button onClick={() => { handleSearch(); handleNavbarToggle(); }}>Search</Button>
+
                 </>
               )}
             </div>

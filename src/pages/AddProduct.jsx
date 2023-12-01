@@ -115,7 +115,7 @@ const ProductPage = () => {
   return (
     <div className="container mt-4">
       <div className="text-center">
-        <button className="btn btn-primary float-end" onClick={openModal}>
+        <button className="btn btn-primary " onClick={openModal}>
           Add Product
         </button>
       </div>
@@ -205,11 +205,11 @@ const ProductPage = () => {
       )}
 
       {/* Mapping products to cards */}
-      <div className="row">
+      <div className="row float-clear">
         {products.map((product) => (
           <div key={product._id} className="col-md-4 mt-3">
             <Card>
-              <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${product.image}`} />
+              <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${product.image}`} style={{objectFit:"cover",width:"100%",height:"200px"}} />
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>

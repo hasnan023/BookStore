@@ -37,9 +37,9 @@ const SingleProduct = () => {
 
   return (
     <Row className="justify-content-md-center">
-      <Col md="auto">
-        <Card style={{ width: '18rem', margin: '20px' }}>
-          {image && <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${image}`} alt={name} />}
+      <Col md ="auto">
+        <Card style={{ width: '15rem', margin: '20px' }}>
+          {image && <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${image}`} alt={name} style={{ objectFit: 'cover', width: '100%', height: '100px'}}/>}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description}</Card.Text>

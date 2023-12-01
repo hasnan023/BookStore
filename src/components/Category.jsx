@@ -63,7 +63,7 @@ function FeaturedBooks() {
             <div key={book._id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="card">
                 <div className="float-center">
-                  <img src={`https://bookstores-production.up.railway.app/${book.image}`} className="card-img-top w-50 h-50" alt={book.name} />
+                  <img src={`https://bookstores-production.up.railway.app/${book.image}`}  alt={book.name} style={{ objectFit: 'cover', width: '100%', height: '200px'}} />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">{book.name}</h5>
