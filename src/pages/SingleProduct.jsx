@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -25,38 +25,35 @@ const SingleProduct = () => {
   }, [id]);
 
   if (!product) {
-    // If product is not yet loaded, you can show a loading indicator or message
+    // If the product is not yet loaded, you can show a loading indicator or message
     return <p>Loading...</p>;
   }
-
- 
- 
 
   const { image, name, description, price, category } = product;
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    
   };
 
   return (
-    <Card style={{ width: '40rem', padding: '40px', border: 'none', margin: 'auto', marginTop: '50px' }}>
-  {image && <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${image}`} alt={name} />}
-  <Card.Body>
-    <Card.Title>{name}</Card.Title>
-    <Card.Text>{description}</Card.Text>
-    <Card.Text>Price: ${price}</Card.Text>
-    <div className="cart" onClick={()=> handleAddToCart(product)}>
-    <NavLink to="/Cart" className="btn btn-dark" >
-              Add to cart
-            </NavLink>
+    <Row className="justify-content-md-center">
+      <Col md="auto">
+        <Card style={{ width: '18rem', margin: '20px' }}>
+          {image && <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${image}`} alt={name} />}
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+            <Card.Text>Price: ${price}</Card.Text>
+            <div className="cart" onClick={() => handleAddToCart(product)}>
+              <NavLink to="/Cart" className="btn btn-dark">
+                Add to Cart
+              </NavLink>
             </div>
-    <Button variant="danger">
-      Add to Wishlist
-    </Button>
-  </Card.Body>
-</Card>
-
+            <Button variant="danger">Add to Wishlist</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
