@@ -18,7 +18,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     // Fetch products data from your backend
-    axios.get('http://localhost:5002/api/product') // Update the URL
+    axios.get('https://bookstores-production.up.railway.app/api/product') // Update the URL
       .then((response) => {
         setProducts(response.data);
         //updateProducts(response.data); 
@@ -56,7 +56,7 @@ const ProductPage = () => {
     };
   console.log(data);
     axios
-      .post('http://localhost:5002/api/product/addProduct', data ,{
+      .post('https://bookstores-production.up.railway.app/api/product/addProduct', data ,{
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -101,7 +101,7 @@ const ProductPage = () => {
   };
 
   const handleDelete = (id) =>{
-    axios.delete(`http://localhost:5002/api/product/${id}`)
+    axios.delete(`https://bookstores-production.up.railway.app/api/product/${id}`)
     .then((res)=>{
       console.log(res);
       window.alert(res.data.message)
@@ -209,7 +209,7 @@ const ProductPage = () => {
         {products.map((product) => (
           <div key={product._id} className="col-md-4 mt-3">
             <Card>
-              <Card.Img variant="top" src={`http://localhost:5002/${product.image}`} />
+              <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${product.image}`} />
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>

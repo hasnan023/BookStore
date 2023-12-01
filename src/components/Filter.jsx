@@ -12,7 +12,7 @@ function LiteratureTypesRow() {
     // Simulated data fetching
     const fetchData = async () => {
       // Replace this with your actual API call or data source
-      const response = await fetch('http://localhost:5002/api/product');
+      const response = await fetch('https://bookstores-production.up.railway.app/api/product');
       const data = await response.json();
       setLiteratureData(data);
     };

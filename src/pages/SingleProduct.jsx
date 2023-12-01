@@ -15,7 +15,7 @@ const SingleProduct = () => {
   useEffect(() => {
     // Fetch product data based on the ID from the URL params
     // Replace the API endpoint with your actual endpoint
-    axios.get(`http://localhost:5002/api/product/${id}`)
+    axios.get(`https://bookstores-production.up.railway.app/api/product/${id}`)
       .then(response => {
         setProduct(response.data);
       })
@@ -41,7 +41,7 @@ const SingleProduct = () => {
 
   return (
     <Card style={{ width: '40rem', padding: '40px', border: 'none', margin: 'auto', marginTop: '50px' }}>
-  {image && <Card.Img variant="top" src={`http://localhost:5002/${image}`} alt={name} />}
+  {image && <Card.Img variant="top" src={`https://bookstores-production.up.railway.app/${image}`} alt={name} />}
   <Card.Body>
     <Card.Title>{name}</Card.Title>
     <Card.Text>{description}</Card.Text>

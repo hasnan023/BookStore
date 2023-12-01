@@ -28,7 +28,7 @@ const Checkout = ({userDetails}) => {
     }
     
     // Use your server endpoint to get the client secret
-    const response = await fetch('http://localhost:5002/api/payments/create-payment-intent', {
+    const response = await fetch('https://bookstores-production.up.railway.app/api/payments/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const Checkout = ({userDetails}) => {
 
       }
       console.log(orderData);
-      axios.post("http://localhost:5002/api/order",orderData)
+      axios.post("https://bookstores-production.up.railway.app/api/order",orderData)
       .then(()=>{
         window.alert("order placed")
         dispatch(clearCart());

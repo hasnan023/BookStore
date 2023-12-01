@@ -17,7 +17,7 @@ function FeaturedBooks() {
 
   useEffect(() => {
     // Fetch products data from your backend
-    axios.get('http://localhost:5002/api/product') // Update the URL
+    axios.get('https://bookstores-production.up.railway.app/api/product') // Update the URL
       .then((response) => {
         setFeaturedBooks(response.data);
         console.log(response.data);
@@ -63,7 +63,7 @@ function FeaturedBooks() {
             <div key={book._id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="card">
                 <div className="float-center">
-                  <img src={`http://localhost:5002/${book.image}`} className="card-img-top w-50 h-50" alt={book.name} />
+                  <img src={`https://bookstores-production.up.railway.app/${book.image}`} className="card-img-top w-50 h-50" alt={book.name} />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">{book.name}</h5>

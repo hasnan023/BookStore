@@ -18,14 +18,14 @@ useEffect(()=>{
   
   const fetchData = async () => {
     try{  
-    const response = await axios.get(`http://localhost:5002/api/product/${productId}`)
+    const response = await axios.get(`https://bookstores-production.up.railway.app/api/product/${productId}`)
       const Product = response.data;
       
       setProductName(Product.name);
       setProductPrice(Product.price);
       setProductDescription(Product.description);
       setProductCategory(Product.category);
-      setProductImage(Product.image?`http://localhost:5002/${Product.image}`:"");
+      setProductImage(Product.image?`https://bookstores-production.up.railway.app/${Product.image}`:"");
     }catch(error){
 
     }
@@ -40,7 +40,7 @@ useEffect(()=>{
       category:category,
       image:selectedFile
     };   
-axios.put(`http://localhost:5002/api/product/${productId}`,data,{
+axios.put(`https://bookstores-production.up.railway.app/api/product/${productId}`,data,{
   headers: {
     'Content-Type': 'multipart/form-data',
   }

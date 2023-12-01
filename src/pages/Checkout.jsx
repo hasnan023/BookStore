@@ -123,7 +123,7 @@ const Checkout = () => {
                     <td className="px-2">{index + 1}.</td>
                     <td className="px-2 position-relative">
                         <img
-                        src={`http://localhost:5002/${item.image}`}
+                        src={`https://bookstores-production.up.railway.app/${item.image}`}
                         alt="Product"
                         style={{ width: "50px", height: "50px" }}
                         />
