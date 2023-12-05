@@ -41,7 +41,7 @@ const handleLogin = async () => {
             
             window.alert('Login successful');
             console.log(login(response.data.user))
-            navigate('/home');
+            navigate('/');
     
           }).catch((err)=>{
             console.error('Login failed');
@@ -96,7 +96,7 @@ const handleLogin = async () => {
               </div>
 
               <div className="mt-4 text-center">
-                <p className="mb-0">Don't have an account? <a href="/Signup">Sign up</a></p>
+                <p className="mb-0">Don't have an account? <a href="/signup">Sign up</a></p>
               </div>
 
               {/* Example Alert for form validation feedback */}

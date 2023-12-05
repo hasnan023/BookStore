@@ -28,13 +28,13 @@ function App() {
           path="/login"
           element={
             isLoggedIn ? (
-              <Navigate to="/home" replace />
+              <Navigate to="/" replace />
             ) : (
               <Login />
             )
           }
         />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />

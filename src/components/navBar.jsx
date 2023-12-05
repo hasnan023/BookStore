@@ -52,7 +52,7 @@ function NavbarComponent() {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav mx-auto">
-            <Link to="/home" onClick={handleNavbarToggle} className="nav-link">
+            <Link to="/" onClick={handleNavbarToggle} className="nav-link">
               Home
             </Link>
             <Link to="/products" onClick={handleNavbarToggle} className="nav-link">
