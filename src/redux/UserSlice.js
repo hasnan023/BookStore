@@ -16,7 +16,9 @@ export const userSlice = createSlice({
       const user = localStorage.getItem("userData");
     },
     logout: (state) => {
+      console.log(state.user);
       state.user = null;
+      console.log(state.user);
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("userData");
     },

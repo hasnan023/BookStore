@@ -13,7 +13,7 @@ import userReducer from './redux/UserSlice';
 const store = configureStore({
   reducer: {
     cart: cartReducer,
-    //user: userReducer,
+    user: userReducer,
   },
 });
 
